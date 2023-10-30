@@ -1,4 +1,6 @@
 import video from "../assets/video/banner_video.mp4";
+import teslaIcon from "../assets/tesla_icon/tesla_icon.png"
+import teslaBlack from "../assets/tesla_icon/tesla_black.png"
 import { BsQuestionCircle } from "react-icons/bs";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { BiUserCircle } from "react-icons/bi";
@@ -39,9 +41,9 @@ const Navbar = () => {
           }`}
         >
           <div className="grid grid-cols-12 gap-4 mt-10">
-            <div className="flex text-base sm:text-4xl tracking-widest col-span-2 justify-center items-center uppercase">
-              Tesla
-            </div>
+            <img src={hoverItem?teslaBlack:teslaIcon} className="ml-16 w-[168px] h-[47px] col-span-3"/>
+              
+            
             <div className="col-start-5 col-span-4">
               <ul className="flex justify-between items-center font-bold ">
                 <li
@@ -51,7 +53,7 @@ const Navbar = () => {
                   Vehicles
                 </li>
                 <li onMouseEnter={()=>handleMouseEnter("Energy")}>Energy</li>
-                <li>Charging</li>
+                <li onMouseEnter={()=>handleMouseEnter("Charging")}>Charging</li>
                 <li>Discover</li>
                 <li>Shop</li>
               </ul>
@@ -73,7 +75,7 @@ const Navbar = () => {
           </div>
 
           {hoverItem =="Vehicles" && (
-            <div className="flex mt-[80px] transition-all ease-in-out duration-300 delay-100  ">
+            <div className={`flex mt-[80px] transition-all ease-in-out duration-300 delay-100  ${hoverItem =="Vehicles" ?"h-fit":"h-0"}  `}>
               <div className="w-[60%] grid grid-cols-4 gap-2 ml-[10rem]   ">
                 <div className="w-fit">
                   <img
@@ -173,7 +175,7 @@ const Navbar = () => {
           )}
 
       {hoverItem =="Energy" && (
-            <div className="flex mt-[80px]">
+            <div className="flex mt-[80px] transition-[height] ease-in-out duration-300 delay-100">
               <div className="w-[60%] grid grid-cols-4 gap-2 ml-[10rem]   ">
                 <div className="w-fit">
                   <img
@@ -239,6 +241,76 @@ const Navbar = () => {
                     <div className=" underline text-sm">Order</div>
                   </div>
                 </div>
+                
+              </div>
+
+              <div className="w-fit pl-16 border-l border-solid border-gray-300">
+                <ul className="font-semibold">
+                  <li>Inventory</li>
+                  <li>Used Cars</li>
+                  <li>Demo Drive</li>
+                  <li>Trade-in</li>
+                  <li>Help me choose</li>
+                  
+                </ul>
+              </div>
+            </div>
+          )}
+
+{hoverItem =="Charging" && (
+            <div className="flex mt-[80px] transition-[height] ease-in-out duration-300 delay-100">
+              <div className="w-[60%] grid grid-cols-4 gap-2 ml-[10rem]   ">
+                <div className="w-fit">
+                  <img
+                    className="w-[170px]"
+                    src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Charging.png"
+                    alt=""
+                  />
+                  <p className="text-center text-lg tracking-widest font-bold leading-4 mt-6">
+                    Model S
+                  </p>
+                  <div className="flex items-center justify-evenly mt-3 text-gray-400 opacity-90">
+                    <div className=" underline tracking-widest left-4 text-sm">
+                      Learn
+                    </div>
+                    <div className=" underline text-sm">Order</div>
+                  </div>
+                </div>
+                <div className="w-fit">
+                  <img
+                    className="w-[170px]"
+                    src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Home-Charging.png"
+                    alt=""
+                  />
+                  <p className="text-center text-lg tracking-widest font-bold leading-4 mt-6">
+                    Model S
+                  </p>
+                  <div className="flex items-center justify-evenly mt-3 text-gray-400 opacity-90">
+                    <div className=" underline tracking-widest left-4 text-sm">
+                      Learn
+                    </div>
+                    <div className=" underline text-sm">Order</div>
+                  </div>
+                </div>
+
+                <div className="w-fit">
+                  <img
+                    className="w-[170px]"
+                    src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Mega-Menu-Charging-Supercharging-NA.png"
+                    alt=""
+                  />
+                  <p className="text-center text-lg tracking-widest font-bold leading-4 mt-6">
+                    Model S
+                  </p>
+                  <div className="flex items-center justify-evenly mt-3 text-gray-400 opacity-90">
+                    <div className=" underline tracking-widest left-4 text-sm">
+                      Learn
+                    </div>
+                    <div className=" underline text-sm">Order</div>
+                  </div>
+                </div>
+                
+                
                 
               </div>
 
